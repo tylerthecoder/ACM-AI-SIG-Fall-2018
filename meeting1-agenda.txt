@@ -1,2 +1,0 @@
-1. Talk about what we want to achieve this semester
-2. Get new people set up with git and other linux tools
