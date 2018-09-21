@@ -1,4 +1,6 @@
 # List of members
+- Tyler Tracy
+- Rachel Culbertson
 - Adam Goertz
 - Tyler Gerth
 - Natalie Bostwick
