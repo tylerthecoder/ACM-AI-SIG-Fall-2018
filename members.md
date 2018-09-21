@@ -1,5 +1,6 @@
 # List of members
 - Tyler Tracy
+- Sicily
 - Rachel Culbertson
 - Adam Goertz
 - Tyler Gerth
