@@ -7,4 +7,5 @@
 - Tyler Tracy
 - Blake Hatch
 - Brayden Alvarez
+- Kyle Sadler
 - Huy Mai
