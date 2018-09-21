@@ -1,3 +1,12 @@
 # List of members
 - Tyler Tracy
 - Sicily
+- Rachel Culbertson
+- Adam Goertz
+- Tyler Gerth
+- Natalie Bostwick
+- Tyler Tracy
+- Blake Hatch
+- Brayden Alvarez
+- Kyle Sadler
+- Huy Mai
