@@ -8,5 +8,7 @@
 - Tyler Tracy
 - Blake Hatch
 - Brayden Alvarez
+- Natalie Bostwick
+- Patrick Graff
 - Kyle Sadler
 - Huy Mai
