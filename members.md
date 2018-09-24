@@ -1,8 +1,14 @@
 # List of members
+- Tyler Tracy
+- Sicily
+- Rachel Culbertson
 - Adam Goertz
 - Tyler Gerth
+- Natalie Bostwick
 - Tyler Tracy
 - Blake Hatch
 - Brayden Alvarez
 - Natalie Bostwick
 - Patrick Graff
+- Kyle Sadler
+- Huy Mai
