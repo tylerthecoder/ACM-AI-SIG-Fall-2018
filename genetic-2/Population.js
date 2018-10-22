@@ -42,17 +42,7 @@ class Population {
         rect(ox,oy,sw/5,sh/5);
         noFill();
       }
-
-      for (const comp of drawing.dna.comps) {
-        stroke(comp.cr, comp.cg, comp.cb);
-        if (comp.type === "Line") {
-          line(comp.x1+ox, comp.y1+oy, comp.x2+ox, comp.y2+oy);
-        } else if (comp.type === "Circle") {
-          ellipse(comp.x1+ox, comp.y1+oy, comp.r, comp.r);
-        } else if (comp.type === "Rect") {
-          rect(comp.x+ox, comp.y+oy, comp.w, comp.h);
-        }
-      }
+      drawing.draw(ox, oy);
     })
   }
 
@@ -63,22 +53,42 @@ class Population {
     for (const tag of this.selections.keys()) {
       const cords = tag.split(":");
       const index = cords[1]*5 + +cords[0];
+
+      // add this to the mating pool twice
+      matingpool.push(this.drawings[index]);
       matingpool.push(this.drawings[index]);
 
       // add your favorites to the generation
       nextGen.push(this.drawings[index]);
     }
 
+    // add five eles to mating pool from last
+    for (let i = 0; i < 5; i++) {
+      const rndEle = random(this.drawings);
+      matingpool.push(rndEle);
+    }
+
+    //add two random elements to the mating pool
+    for (let i = 0; i < 2; i++) {
+      matingpool.push(new Drawing());
+    }
+
+    const oldLength = this.selections.size;
     this.selections.clear();
 
 
     // add the original selections
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0, j = 1; i < 15; i++, j+=.3) {
       const parent1 = random(matingpool);
       const parent2 = random(matingpool);
-      const child = parent1.mate(parent2, 2);
+      const child = parent1.mate(parent2, j);
       nextGen.push(child);
     }
+
+    for (let i = 0; i < 5 + (5-oldLength); i++) {
+      nextGen.push(new Drawing());
+    }
+
     this.drawings = nextGen;
   }
 
