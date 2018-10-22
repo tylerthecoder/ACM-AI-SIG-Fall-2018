@@ -1,5 +1,5 @@
 const lifeSpan = 400;
-const popSize = 400;
+const popSize = 3000;
 let target;
 
 
