@@ -9,7 +9,6 @@ const sh = 900;
 function setup() {
   createCanvas(sw,sh);
 
-
   population = new Population();
 
   const button = createButton('Next Generation');

@@ -71,17 +71,20 @@ class Dna {
   crossover(other) {
     // pick random elements for both parents
 
+    console.log("crossover");
+
     const cross = new Dna(this.w, this.h);
     cross.comps = [];
-    const allComps = this.comps.concat(other.comps);
-    const size = Math.floor( (this.comps.length + other.comps.length)/2 + (random(4) - 2) )
 
-    console.log(other.comps, this.comps);
-    for (let i=0; i<size; i++) {
-      const rndIndex = random(size-i);
-      const comp = allComps.splice(rndIndex,1)[0];
-      cross.comps.push(comp);
-    }
+    const amountToTake1 = Math.floor(Math.random() * this.comps.length );
+    const shuffled1 = this.comps.sort(() => .5 - Math.random());
+    console.log(amountToTake1, shuffled1, shuffled1.slice(0, amountToTake1));
+    cross.comps = cross.comps.concat(shuffled1.slice(0, amountToTake1));
+
+    const amountToTake2 = Math.floor(Math.random() * other.comps.length);
+    const shuffled2 = other.comps.sort(() => .5 - Math.random());
+    cross.comps = cross.comps.concat(shuffled2.slice(0, amountToTake2));
+
     console.log(cross.comps);
 
     return cross;
@@ -90,7 +93,7 @@ class Dna {
   mutate(rate) {
     let numOfNewEles = 0;
     this.comps.map(comp => {
-      if (Math.random() < .3 * rate) {
+      if (Math.random() < .05 * rate) {
         // mutate em
         const type = Math.floor(random(4));
         if (type === 0) { // change position

@@ -55,30 +55,24 @@ class Population {
       const index = cords[1]*5 + +cords[0];
 
       // add this to the mating pool twice
-      matingpool.push(this.drawings[index]);
-      matingpool.push(this.drawings[index]);
+      for (let i = 0; i < 4; i++) {
+        matingpool.push(this.drawings[index]);
+      }
 
       // add your favorites to the generation
       nextGen.push(this.drawings[index]);
     }
 
-    // add five eles to mating pool from last
-    for (let i = 0; i < 5; i++) {
+    // add five people to mating pool from last generation
+    for (let i = 0; i < 3; i++) {
       const rndEle = random(this.drawings);
       matingpool.push(rndEle);
-    }
-
-    //add two random elements to the mating pool
-    for (let i = 0; i < 2; i++) {
-      matingpool.push(new Drawing());
     }
 
     const oldLength = this.selections.size;
     this.selections.clear();
 
-
-    // add the original selections
-    for (let i = 0, j = 1; i < 15; i++, j+=.3) {
+    for (let i = 0, j = 1; i < 15; i++, j+=.1) {
       const parent1 = random(matingpool);
       const parent2 = random(matingpool);
       const child = parent1.mate(parent2, j);
